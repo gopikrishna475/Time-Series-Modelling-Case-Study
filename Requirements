@@ -1,0 +1,20 @@
+## Key Design Choices
+
+- **STL decomposition** used instead of classical additive decomposition — robust to the 2020 COVID anomaly
+- **HDD/CDD degree-days** used instead of raw temperature — captures U-shaped demand-temperature relationship
+- **168-hour LSTM look-back** — captures full weekly demand cycle including weekday/weekend pattern
+- **Stepwise AIC search** (pmdarima) — covers p∈[0,6], d∈[0,2], q∈[0,6] efficiently
+- **All lag features use shift ≥ 1** — prevents data leakage
+
+---
+
+## Requirements
+pandas
+numpy
+matplotlib
+statsmodels
+pmdarima
+scikit-learn
+tensorflow
+requests
+holidays
